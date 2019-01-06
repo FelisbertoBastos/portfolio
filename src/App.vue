@@ -8,7 +8,7 @@
 import SideBar from './components/SideBar'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     'side-bar': SideBar
   }
