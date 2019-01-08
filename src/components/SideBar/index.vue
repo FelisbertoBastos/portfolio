@@ -1,7 +1,17 @@
 <template>
   <div id="sidebar">
-    <div class="container">
-      <social-menu/>
+    <div
+      class="
+        flex-container
+        padding-all-8
+        flex-direction-column
+        flex-align-items-center
+        flex-justify-content-end
+        flex-align-content-stretch
+        flex-nowrap
+      "
+    >
+      <social-menu />
     </div>
   </div>
 </template>
