@@ -1,12 +1,12 @@
 <template>
   <ul id="social-menu">
-    <li>
+    <li class="margin-top-8 margin-bottom-8">
       <linkedin-icon />
     </li>
-    <li>
+    <li class="margin-top-8 margin-bottom-8">
       <google-icon />
     </li>
-    <li>
+    <li class="margin-top-8 margin-bottom-8">
       <whatsapp-icon />
     </li>
   </ul>
@@ -18,11 +18,11 @@ import GoogleIcon from './SocialIcons/GoogleIcon'
 import WhatsappIcon from './SocialIcons/WhatsappIcon'
 
 export default {
+  name: 'SocialMenu',
   components: {
     'linkedin-icon': LinkedinIcon,
     'google-icon': GoogleIcon,
     'whatsapp-icon': WhatsappIcon
-  },
-  name: 'SocialMenu'
+  }
 }
 </script>

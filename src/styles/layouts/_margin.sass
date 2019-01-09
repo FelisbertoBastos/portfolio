@@ -1,0 +1,13 @@
+// MARGIN
+
+.margin
+
+  &-all
+    @each $margin in $margins-and-paddings
+      &-#{$margin}
+        margin: #{$margin}px
+  
+  @each $direction in $directions
+    @each $margin in $margins-and-paddings
+      &-#{$direction}-#{$margin}
+        margin-#{$direction}: #{$margin}px

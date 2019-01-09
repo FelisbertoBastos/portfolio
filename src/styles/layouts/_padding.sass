@@ -3,13 +3,11 @@
 .padding
 
   &-all
-    &-8
-      padding: 8px    
-    &-16
-      padding: 16px
-
+    @each $padding in $margins-and-paddings
+      &-#{$padding}
+        padding: #{$padding}px
+  
   @each $direction in $directions
-    &-#{$direction}-8
-        padding-#{$direction}: 8px
-    &-#{$direction}-16
-        padding-#{$direction}: 16px
+    @each $padding in $margins-and-paddings
+      &-#{$direction}-#{$padding}
+        padding-#{$direction}: #{$padding}px
