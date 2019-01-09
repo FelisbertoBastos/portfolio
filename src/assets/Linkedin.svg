@@ -3,6 +3,5 @@
     <path id="letter-n" d="M51,33.69V49H41.146V34.749c0-3.729-1.54-6.272-4.929-6.272a4.97,4.97,0,0,0-4.706,3.369A6.243,6.243,0,0,0,31.3,34.1V49H21.535s.127-25.24,0-27.535H31.3v4.322C31.875,23.9,35,21.2,39.971,21.2,46.147,21.2,51,25.159,51,33.69Z" fill="none" stroke="#b8b8b8" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
     <path id="letter-i" d="M7.543,49h8.688V21.466H7.543Z" fill="none" stroke="#b8b8b8" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
     <path id="dot" d="M16.781,13.38c0,2.418-1.848,4.335-4.808,4.335h-.06a4.355,4.355,0,0,1-4.7-4.33c0-2.469,1.9-4.335,4.817-4.335s4.693,1.862,4.753,4.33Z" fill="none" stroke="#b8b8b8" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
-    <path id="square" d="M54,58H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0H54a4,4,0,0,1,4,4V54a4,4,0,0,1-4,4Z" fill="none" stroke="#b8b8b8" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
   </g>
 </svg>

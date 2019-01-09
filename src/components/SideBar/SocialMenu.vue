@@ -1,19 +1,28 @@
 <template>
   <ul id="social-menu">
     <li>
-      <img src="../../assets/Linkedin.svg" alt="Linkedin">
+      <linkedin-icon />
     </li>
     <li>
-      <img src="../../assets/Google.svg" alt="Google">
+      <google-icon />
     </li>
     <li>
-      <img src="../../assets/Whatsapp.svg" alt="Whatsapp">
+      <whatsapp-icon />
     </li>
   </ul>
 </template>
 
 <script>
+import LinkedinIcon from './SocialIcons/LinkedinIcon'
+import GoogleIcon from './SocialIcons/GoogleIcon'
+import WhatsappIcon from './SocialIcons/WhatsappIcon'
+
 export default {
+  components: {
+    'linkedin-icon': LinkedinIcon,
+    'google-icon': GoogleIcon,
+    'whatsapp-icon': WhatsappIcon
+  },
   name: 'SocialMenu'
 }
 </script>
