@@ -12,19 +12,24 @@ export default {
   name: 'FlexContainer',
   props: {
     direction: {
-      type: String
+      type: String,
+      default: 'row'
     },
     alignItems: {
-      type: String
+      type: String,
+      default: 'stretch'
     },
     justifyContent: {
-      type: String
+      type: String,
+      default: 'flex-start'
     },
     wrap: {
-      type: String
+      type: String,
+      default: 'nowrap'
     },
     alignContent: {
-      type: String
+      type: String,
+      default: 'stretch'
     },
     fullHeight: {
       type: Boolean
