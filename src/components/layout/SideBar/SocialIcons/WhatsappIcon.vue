@@ -1,6 +1,6 @@
 <template>
   <master-icon>
-    <img src="../../../assets/Whatsapp.svg" alt="Whatsapp">
+    <img src="../../../../assets/Whatsapp.svg" alt="Whatsapp">
   </master-icon>
 </template>
 

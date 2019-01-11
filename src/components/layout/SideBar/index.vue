@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import FlexContainer from '../modules/FlexContainer'
+import FlexContainer from '../../modules/FlexContainer'
 import SocialMenu from './SocialMenu'
 
 export default {

@@ -1,6 +1,6 @@
 <template>
   <master-icon>
-    <img src="../../../assets/Linkedin.svg" alt="Linkedin">
+    <img src="../../../../assets/Google.svg" alt="Google">
   </master-icon>
 </template>
 
@@ -8,7 +8,7 @@
 import MasterIcon from './MasterIcon'
 
 export default {
-  name: 'LinkedinIcon',
+  name: 'GoogleIcon',
   components: {
     'master-icon': MasterIcon
   }
