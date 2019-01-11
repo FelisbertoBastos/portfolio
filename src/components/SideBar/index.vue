@@ -1,27 +1,27 @@
 <template>
   <div id="sidebar">
-    <div
-      class="
-        flex-container
-        padding-all-8
-        flex-direction-column
-        flex-align-items-center
-        flex-justify-content-end
-        flex-align-content-stretch
-        flex-nowrap
-      "
+    <flex-container
+      direction="column"
+      alignItems="center"
+      justifyContent="flex-end"
+      wrap="nowrap"
+      alignContent="stretch"
+      fullHeight
+      v-padding:all=8
     >
       <social-menu />
-    </div>
+    </flex-container>
   </div>
 </template>
 
 <script>
+import FlexContainer from '../modules/FlexContainer'
 import SocialMenu from './SocialMenu'
 
 export default {
   name: 'SideBar',
   components: {
+    'flex-container': FlexContainer,
     'social-menu': SocialMenu
   }
 }
