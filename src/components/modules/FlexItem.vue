@@ -13,19 +13,24 @@ export default {
   name: 'FlexItem',
   props: {
     order: {
-      type: Number
+      type: Number,
+      default: 0
     },
     flexGrow: {
-      type: Number
+      type: Number,
+      default: 0
     },
     flexShrink: {
-      type: Number
+      type: Number,
+      default: 1
     },
     flexBasis: {
-      type: String
+      type: String,
+      default: 'auto'
     },
     alignSelf: {
-      type: String
+      type: String,
+      default: 'auto'
     }
   },
   computed: {
