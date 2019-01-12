@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import FlexContainer from '../../modules/FlexContainer'
-import FlexItem from '../../modules/FlexItem'
+import FlexContainer from '@/components/modules/FlexContainer'
+import FlexItem from '@/components/modules/FlexItem'
 import SocialMenu from './SocialMenu'
 
 export default {

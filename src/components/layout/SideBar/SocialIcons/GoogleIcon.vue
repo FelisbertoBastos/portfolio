@@ -1,6 +1,6 @@
 <template>
   <master-icon>
-    <img src="../../../../assets/Google.svg" alt="Google">
+    <img src="@/assets/Google.svg" alt="Google">
   </master-icon>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <master-icon>
-    <img src="../../../../assets/Linkedin.svg" alt="Linkedin">
+    <img src="@/assets/Linkedin.svg" alt="Linkedin">
   </master-icon>
 </template>
 
