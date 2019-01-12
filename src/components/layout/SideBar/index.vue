@@ -7,22 +7,34 @@
       wrap="nowrap"
       alignContent="stretch"
       fullHeight
-      v-padding:all=8
+      v-padding:all="8"
     >
-      <social-menu />
+      <flex-item
+        fullWidth
+        v-width:max="socialMenuMaxWidth"
+      >
+        <social-menu />
+      </flex-item>
     </flex-container>
   </div>
 </template>
 
 <script>
 import FlexContainer from '../../modules/FlexContainer'
+import FlexItem from '../../modules/FlexItem'
 import SocialMenu from './SocialMenu'
 
 export default {
   name: 'SideBar',
   components: {
     'flex-container': FlexContainer,
+    'flex-item': FlexItem,
     'social-menu': SocialMenu
+  },
+  data () {
+    return {
+      socialMenuMaxWidth: '60px'
+    }
   }
 }
 </script>
