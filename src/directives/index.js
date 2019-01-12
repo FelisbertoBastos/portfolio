@@ -1,3 +1,2 @@
-import './margin.js'
-import './padding.js'
+import './spacing.js'
 import './width.js'
