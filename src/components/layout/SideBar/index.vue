@@ -13,7 +13,9 @@
         fullWidth
         v-width:max="socialMenuMaxWidth"
       >
-        <social-menu />
+        <social-menu
+          :items="iconItems"
+        />
       </flex-item>
     </flex-container>
   </div>
@@ -33,7 +35,12 @@ export default {
   },
   data () {
     return {
-      socialMenuMaxWidth: '60px'
+      socialMenuMaxWidth: '60px',
+      iconItems: [
+        { src: require('@/assets/Linkedin.svg'), alt: 'Linkedin' },
+        { src: require('@/assets/Google.svg'), alt: 'Google' },
+        { src: require('@/assets/Whatsapp.svg'), alt: 'Whatsapp' }
+      ]
     }
   }
 }
