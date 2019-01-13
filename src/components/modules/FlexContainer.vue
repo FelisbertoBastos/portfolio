@@ -2,6 +2,7 @@
   <div
     class="flex-container"
     :class="classArray"
+    :style="styleObject"
   >
     <slot></slot>
   </div>
@@ -11,6 +12,7 @@
 export default {
   name: 'FlexContainer',
   props: {
+    // Container Attributes
     direction: {
       type: String,
       default: 'row'
@@ -31,6 +33,28 @@ export default {
       type: String,
       default: 'stretch'
     },
+    // Item Attributes
+    order: {
+      type: Number,
+      default: 0
+    },
+    flexGrow: {
+      type: Number,
+      default: 0
+    },
+    flexShrink: {
+      type: Number,
+      default: 1
+    },
+    flexBasis: {
+      type: String,
+      default: 'auto'
+    },
+    alignSelf: {
+      type: String,
+      default: 'auto'
+    },
+    //
     fullHeight: {
       type: Boolean
     },
@@ -49,6 +73,14 @@ export default {
         { 'full-height': this.fullHeight },
         { 'full-width': this.fullWidth }
       ]
+    },
+    styleObject () {
+      return {
+        order: this.order,
+        flexGrow: this.flexGrow,
+        flexShrink: this.flexShrink,
+        flexBasis: this.flexBasis
+      }
     }
   }
 }
