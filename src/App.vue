@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <side-bar />
-    <content-area />
+    <main-component />
   </div>
 </template>
 
 <script>
 import SideBar from './components/layout/SideBar'
-import ContentArea from './components/layout/ContentArea'
+import MainComponent from './components/layout/MainComponent'
 
 export default {
   name: 'App',
   components: {
     'side-bar': SideBar,
-    'content-area': ContentArea
+    'main-component': MainComponent
   }
 }
 </script>
