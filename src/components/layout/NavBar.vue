@@ -1,6 +1,8 @@
 <template>
   <nav
     id="navbar"
+    ref="navbar"
+    v-on:click="itemSelect"
   >
     <a
       v-for="(item, key) in items"
@@ -9,6 +11,7 @@
     >
       {{ item.name }}
     </a>
+    <div ref="indicator" class="indicator"></div>
   </nav>
 </template>
 
@@ -20,6 +23,26 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  methods: {
+    indicatorPositioning (left, width) {
+      this.$refs.indicator.style.left = left
+      this.$refs.indicator.style.width = width
+    },
+    itemSelect (event) {
+      if (event.target.tagName === 'A') {
+        this.indicatorPositioning(
+          event.target.offsetLeft + 'px',
+          event.target.offsetWidth + 'px'
+        )
+      }
+    }
+  },
+  mounted () {
+    this.indicatorPositioning(
+      this.$refs.navbar.firstElementChild.offsetLeft + 'px',
+      this.$refs.navbar.firstElementChild.offsetWidth + 'px'
+    )
   }
 }
 </script>
