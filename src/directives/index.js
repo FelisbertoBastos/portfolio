@@ -1,3 +1,2 @@
 import './spacing.js'
-import './height.js'
-import './width.js'
+import './size.js'
