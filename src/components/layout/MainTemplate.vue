@@ -5,11 +5,13 @@
     v-padding:all=8
     v-margin:left="contentAreaMarginLeft"
   >
-    <flex-item
-      style="height: 100px; background: rgba(255, 0, 0, 0.1)"
+    <flex-container
+      justifyContent=center
+      alignItems=center
+      v-padding:all=8
     >
       <slot name="header"></slot>
-    </flex-item>
+    </flex-container>
     <flex-container
       :flexGrow=1
     >
@@ -22,7 +24,6 @@
       </flex-container>
       <flex-item
         v-width="contentWidth"
-        style="background: rgba(0, 255, 0, 0.1)"
       >
         <slot name="content"></slot>
       </flex-item>

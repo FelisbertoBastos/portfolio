@@ -1,7 +1,9 @@
 <template>
   <main-template>
     <template slot="header">
-      1
+      <navbar
+        :items="navItems"
+      />
     </template>
     <template
       slot="title"
@@ -22,11 +24,22 @@
 
 <script>
 import MainTemplate from './MainTemplate'
+import NavBar from './NavBar'
 
 export default {
   name: 'MainComponent',
   components: {
-    'main-template': MainTemplate
+    'main-template': MainTemplate,
+    'navbar': NavBar
+  },
+  data () {
+    return {
+      navItems: [
+        { name: 'Início' },
+        { name: 'Habilidades' },
+        { name: 'Contato' }
+      ]
+    }
   }
 }
 </script>
