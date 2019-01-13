@@ -53,13 +53,6 @@ export default {
     alignSelf: {
       type: String,
       default: 'auto'
-    },
-    //
-    fullHeight: {
-      type: Boolean
-    },
-    fullWidth: {
-      type: Boolean
     }
   },
   computed: {
@@ -69,9 +62,7 @@ export default {
         `align-items-${this.alignItems}`,
         `justify-content-${this.justifyContent}`,
         `wrap-${this.wrap}`,
-        `content-${this.alignContent}`,
-        { 'full-height': this.fullHeight },
-        { 'full-width': this.fullWidth }
+        `content-${this.alignContent}`
       ]
     },
     styleObject () {

@@ -1,19 +1,19 @@
 import Vue from 'vue'
 
-Vue.directive('width', {
+Vue.directive('height', {
   bind (el, binding) {
     switch (binding.arg) {
       case 'full':
-        el.classList.add('full-width')
+        el.classList.add('full-height')
         break
       case 'max':
-        el.style.maxWidth = binding.value
+        el.style.maxHeight = binding.value
         break
       case 'min':
-        el.style.minWidth = binding.value
+        el.style.minHeight = binding.value
         break
       case undefined:
-        el.style.width = binding.value
+        el.style.height = binding.value
         break
     }
   }

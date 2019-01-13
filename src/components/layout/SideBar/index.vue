@@ -6,11 +6,11 @@
       justifyContent="flex-end"
       wrap="nowrap"
       alignContent="stretch"
-      fullHeight
+      v-height:full
       v-padding:all="8"
     >
       <flex-item
-        fullWidth
+        v-width:full
         v-width:max="socialMenuMaxWidth"
       >
         <social-menu

@@ -31,20 +31,12 @@ export default {
     alignSelf: {
       type: String,
       default: 'auto'
-    },
-    fullHeight: {
-      type: Boolean
-    },
-    fullWidth: {
-      type: Boolean
     }
   },
   computed: {
     classArray () {
       return [
-        `align-self-${this.alignSelf}`,
-        { 'full-height': this.fullHeight },
-        { 'full-width': this.fullWidth }
+        `align-self-${this.alignSelf}`
       ]
     },
     styleObject () {

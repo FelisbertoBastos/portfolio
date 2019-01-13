@@ -1,7 +1,7 @@
 <template>
   <flex-container
     direction=column
-    fullHeight
+    v-height:full
     v-padding:all=8
     style="background: blue;"
     v-margin:left="contentAreaMarginLeft"
