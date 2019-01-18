@@ -17,7 +17,9 @@
       />
     </template>
     <template slot="content">
-      3
+      <circuit-tree
+        v-width:full
+      />
     </template>
   </main-template>
 </template>
@@ -25,12 +27,14 @@
 <script>
 import MainTemplate from './MainTemplate'
 import NavBar from './NavBar'
+import CircuitTree from './CircuitTree'
 
 export default {
   name: 'MainComponent',
   components: {
     'main-template': MainTemplate,
-    'navbar': NavBar
+    'navbar': NavBar,
+    'circuit-tree': CircuitTree
   },
   data () {
     return {

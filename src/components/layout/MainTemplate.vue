@@ -14,6 +14,7 @@
     </flex-container>
     <flex-container
       :flexGrow=1
+      v-height="'0'"
     >
       <flex-container
         v-width="titleWidth"
@@ -22,24 +23,24 @@
       >
         <slot name="title"></slot>
       </flex-container>
-      <flex-item
+      <flex-container
         v-width="contentWidth"
+        justifyContent=center
+        alignItems=center
       >
         <slot name="content"></slot>
-      </flex-item>
+      </flex-container>
     </flex-container>
   </flex-container>
 </template>
 
 <script>
 import FlexContainer from '@/components/modules/FlexContainer'
-import FlexItem from '@/components/modules/FlexItem'
 
 export default {
   name: 'MainTemplate',
   components: {
-    'flex-container': FlexContainer,
-    'flex-item': FlexItem
+    'flex-container': FlexContainer
   },
   data () {
     return {
