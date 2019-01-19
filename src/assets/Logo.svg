@@ -2,13 +2,13 @@
   <g id="Logo" transform="translate(-118 -213)">
     <text id="_" data-name="/**" transform="translate(118 263)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">/**</tspan></text>
     <text id="_2" data-name="*" transform="translate(154 331)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">*</tspan></text>
-    <text id="_Front-end" data-name="* Front-end" transform="translate(154 399)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* Front-end</tspan></text>
-    <text id="_Developer" data-name="* Developer" transform="translate(154 467)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* Developer</tspan></text>
-    <text id="_3" data-name="*" transform="translate(154 535)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">*</tspan></text>
+    <text id="_3" data-name="* " transform="translate(154 399)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* </tspan></text>
+    <text id="_4" data-name="* " transform="translate(154 467)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* </tspan></text>
+    <text id="_5" data-name="*" transform="translate(154 535)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">*</tspan></text>
     <text id="_Author:" data-name="* @Author:" transform="translate(154 603)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* </tspan><tspan y="0" font-family="CourierNewPS-BoldMT, Courier New" font-weight="700">@Author:</tspan></text>
-    <text id="_Felisberto" data-name="* Felisberto" transform="translate(154 671)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* Felisberto</tspan></text>
-    <text id="_Bastos" data-name="* Bastos" transform="translate(154 739)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* Bastos</tspan></text>
-    <text id="_4" data-name="*" transform="translate(154 807)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">*</tspan></text>
-    <text id="_5" data-name="*/" transform="translate(154 875)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">*/</tspan></text>
+    <text id="_6" data-name="* " transform="translate(154 671)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* </tspan></text>
+    <text id="_7" data-name="* " transform="translate(154 739)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">* </tspan></text>
+    <text id="_8" data-name="*" transform="translate(154 807)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">*</tspan></text>
+    <text id="_9" data-name="*/" transform="translate(154 875)" fill="#3cd32b" font-size="60" font-family="CourierNewPSMT, Courier New"><tspan x="0" y="0">*/</tspan></text>
   </g>
 </svg>

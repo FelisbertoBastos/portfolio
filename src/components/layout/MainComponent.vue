@@ -8,13 +8,7 @@
     <template
       slot="title"
     >
-      <img
-        v-width:full
-        v-height:full
-        v-width:max="'300px'"
-        src="@/assets/Logo.svg"
-        alt="Logo"
-      />
+      <headline />
     </template>
     <template slot="content">
       <circuit-tree
@@ -27,6 +21,7 @@
 <script>
 import MainTemplate from './MainTemplate'
 import NavBar from './NavBar'
+import Headline from './Headline'
 import CircuitTree from './CircuitTree'
 
 export default {
@@ -34,6 +29,7 @@ export default {
   components: {
     'main-template': MainTemplate,
     'navbar': NavBar,
+    'headline': Headline,
     'circuit-tree': CircuitTree
   },
   data () {
