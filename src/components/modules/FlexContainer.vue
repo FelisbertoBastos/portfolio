@@ -62,7 +62,7 @@ export default {
         `align-items-${this.alignItems}`,
         `justify-content-${this.justifyContent}`,
         `wrap-${this.wrap}`,
-        `content-${this.alignContent}`
+        `align-content-${this.alignContent}`
       ]
     },
     styleObject () {
