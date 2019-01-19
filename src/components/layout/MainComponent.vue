@@ -11,8 +11,14 @@
       <headline />
     </template>
     <template slot="content">
-      <circuit-tree
+      <!-- <circuit-tree
         v-width:full
+      /> -->
+      <habilidades
+        v-if="checkNavOption('Habilidades')"
+      />
+      <contato
+        v-else-if="checkNavOption('Contato')"
       />
     </template>
   </main-template>
@@ -22,7 +28,9 @@
 import MainTemplate from './MainTemplate'
 import NavBar from './NavBar'
 import Headline from './Headline'
-import CircuitTree from './CircuitTree'
+// import CircuitTree from './CircuitTree'
+import Habilidades from './Habilidades'
+import Contato from './Contato'
 
 export default {
   name: 'MainComponent',
@@ -30,15 +38,24 @@ export default {
     'main-template': MainTemplate,
     'navbar': NavBar,
     'headline': Headline,
-    'circuit-tree': CircuitTree
+    // 'circuit-tree': CircuitTree,
+    'habilidades': Habilidades,
+    'contato': Contato
   },
   data () {
     return {
       navItems: [
-        { name: 'Início' },
-        { name: 'Habilidades' },
-        { name: 'Contato' }
+        { name: 'Início', active: true },
+        { name: 'Habilidades', active: false },
+        { name: 'Contato', active: false }
       ]
+    }
+  },
+  methods: {
+    checkNavOption: function (testName) {
+      return this.navItems.some(item => {
+        return item.name === testName && item.active === true
+      })
     }
   }
 }

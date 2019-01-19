@@ -31,10 +31,15 @@ export default {
     },
     itemSelect (event) {
       if (event.target.tagName === 'A') {
-        this.indicatorPositioning(
-          event.target.offsetLeft + 'px',
-          event.target.offsetWidth + 'px'
-        )
+        const item = this.items.find(item => item.active && item.name !== event.target.innerText)
+        if (item) {
+          item.active = false
+          this.items.find(item => item.name === event.target.innerText).active = true
+          this.indicatorPositioning(
+            event.target.offsetLeft + 'px',
+            event.target.offsetWidth + 'px'
+          )
+        }
       }
     }
   },
