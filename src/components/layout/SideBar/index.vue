@@ -37,9 +37,9 @@ export default {
     return {
       socialMenuMaxWidth: '60px',
       iconItems: [
-        { src: require('@/assets/Linkedin.svg'), alt: 'Linkedin' },
+        { src: require('@/assets/Whatsapp.svg'), alt: 'Whatsapp' },
         { src: require('@/assets/Google.svg'), alt: 'Google' },
-        { src: require('@/assets/Whatsapp.svg'), alt: 'Whatsapp' }
+        { src: require('@/assets/Github.svg'), alt: 'Github' }
       ]
     }
   }
