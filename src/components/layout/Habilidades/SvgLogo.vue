@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="SvgLogo"
-  >
+  <master-logo>
     <svg
       v-height:full
       width="147.164"
@@ -25,34 +23,27 @@
         <path id="G" d="M101.263,70.132Q99.909,51.236,82.131,51T63,70.132V98.093c-.059,6.49,6.313,17.792,19.131,17.66s19.234-10.552,19.131-17.66V77.49H82.131v10.3H89.49v10.3q-1.913,5.945-7.358,5.887t-7.358-5.887V70.132q.059-8.859,7.358-8.83t7.358,8.83Z" transform="translate(29.713 22.166)" fill="#fff"/>
       </g>
     </svg>
-  </div>
+  </master-logo>
 </template>
 
 <script>
+import MasterLogo from './MasterLogo'
+
 export default {
-  name: 'SvgLogo'
+  name: 'SvgLogo',
+  components: {
+    'master-logo': MasterLogo
+  }
 }
 </script>
 
 <style lang="sass" scoped>
-.SvgLogo
-  position: relative
-  height: 120px
-  width: 120px
-  max-width: 100%
-  margin: auto
+.logo
 
-  svg, #flower
-    max-width: 100%
-    position: absolute
-    transition: filter 0.2s
+  #flower
     transform-origin: 50% 50%
 
-  &:hover svg
-    // -webkit-filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-    filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-
-  &:hover svg #flower
+  &:hover #flower
     animation: flowerRotation 3s linear infinite
 
 @keyframes flowerRotation

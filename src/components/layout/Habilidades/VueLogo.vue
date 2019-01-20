@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="VueLogo"
-  >
+  <master-logo>
     <svg
       v-height:full
       width="171.078"
@@ -22,29 +20,16 @@
         <path id="v-1" d="M20,10H54.216L71.323,44.216,88.431,10h34.216L71.323,95.539Z" transform="translate(14.216)" fill="#434255"/>
       </g>
     </svg>
-  </div>
+  </master-logo>
 </template>
 
 <script>
+import MasterLogo from './MasterLogo'
+
 export default {
-  name: 'VueLogo'
+  name: 'VueLogo',
+  components: {
+    'master-logo': MasterLogo
+  }
 }
 </script>
-
-<style lang="sass" scoped>
-.VueLogo
-  position: relative
-  height: 120px
-  width: 120px
-  max-width: 100%
-  margin: auto
-
-  svg
-    max-width: 100%
-    position: absolute
-    transition: all 0.2s
-
-  &:hover svg
-    // -webkit-filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-    filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-</style>

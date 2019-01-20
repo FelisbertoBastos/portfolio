@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="JavascriptLogo"
-  >
+  <master-logo>
     <svg
       v-height:full
       id="javascript-logo"
@@ -22,29 +20,16 @@
       <path id="S" d="M53,18V67.271L74.9,65.9V79.588L53,82.325V96.012l30.11-5.474,4.106-36.953L63.949,56.321V28.949h26L91.322,18Z" transform="translate(19.537 6.635)" fill="#fff"/>
       <path id="J" d="M55.847,18H42.161V82.325L24,78.219l1.737,12.318,30.11,5.474Z" transform="translate(8.478 6.635)" fill="#fff"/>
     </svg>
-  </div>
+  </master-logo>
 </template>
 
 <script>
+import MasterLogo from './MasterLogo'
+
 export default {
-  name: 'JavascriptLogo'
+  name: 'JavascriptLogo',
+  components: {
+    'master-logo': MasterLogo
+  }
 }
 </script>
-
-<style lang="sass" scoped>
-.JavascriptLogo
-  position: relative
-  height: 120px
-  width: 120px
-  max-width: 100%
-  margin: auto
-
-  svg
-    max-width: 100%
-    position: absolute
-    transition: all 0.2s
-
-  &:hover svg
-    // -webkit-filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-    filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-</style>

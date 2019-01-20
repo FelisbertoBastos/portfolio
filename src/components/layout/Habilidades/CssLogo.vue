@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="CssLogo"
-  >
+  <master-logo>
     <svg
       v-height:full
       id="css-logo"
@@ -21,29 +19,16 @@
     >
       <path id="Three" d="M20,20h82.118L91.169,88.431l-30.11,13.686L29.58,88.431,26.843,72.008H40.529l2.737,10.949,17.792,5.475L78.851,80.22l2.737-19.161H25.475L24.106,47.373h60.22l1.369-13.686H21.369Z" transform="translate(7.373 7.373)" fill="#fff"/>
     </svg>
-  </div>
+  </master-logo>
 </template>
 
 <script>
+import MasterLogo from './MasterLogo'
+
 export default {
-  name: 'CssLogo'
+  name: 'CssLogo',
+  components: {
+    'master-logo': MasterLogo
+  }
 }
 </script>
-
-<style lang="sass" scoped>
-.CssLogo
-  position: relative
-  height: 120px
-  width: 120px
-  max-width: 100%
-  margin: auto
-
-  svg
-    max-width: 100%
-    position: absolute
-    transition: all 0.2s
-
-  &:hover svg
-    // -webkit-filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-    filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-</style>

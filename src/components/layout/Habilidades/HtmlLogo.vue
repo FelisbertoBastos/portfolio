@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="HtmlLogo"
-  >
+  <master-logo>
     <svg
       v-height:full
       id="html-shield"
@@ -21,29 +19,16 @@
     >
       <path id="Five" d="M102.118,16,99.38,31.055H39.161l1.369,16.424H96.643l-5.475,43.8-30.11,9.58-30.11-9.58L28.212,68.008H44.635L46,80.325l15.055,4.106,16.424-4.106,1.369-17.792H26.843L20,16Z" transform="translate(7.372 5.898)" fill="#fff"/>
     </svg>
-  </div>
+  </master-logo>
 </template>
 
 <script>
+import MasterLogo from './MasterLogo'
+
 export default {
-  name: 'HtmlLogo'
+  name: 'HtmlLogo',
+  components: {
+    'master-logo': MasterLogo
+  }
 }
 </script>
-
-<style lang="sass" scoped>
-.HtmlLogo
-  position: relative
-  height: 120px
-  width: 120px
-  max-width: 100%
-  margin: auto
-
-  svg
-    max-width: 100%
-    position: absolute
-    transition: all 0.2s
-
-  &:hover svg
-    // -webkit-filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-    filter: drop-shadow(0 8px 7px rgba(0,0,0,0.5))
-</style>
