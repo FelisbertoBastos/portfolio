@@ -22,3 +22,30 @@ export default {
   name: 'HoverEffect'
 }
 </script>
+
+<style lang="sass" scoped>
+div.hover-effect
+  position: relative
+  overflow: hidden
+  width: 100%
+  height: auto
+  cursor: pointer
+
+svg
+  position: absolute
+  width: 100%
+  height: auto
+
+  > #square
+    opacity: 0.0
+    stroke-dasharray: 226.857
+    stroke-dashoffset: 226.857
+    transition: all 1s
+
+  &:hover #square
+    opacity: 1.0
+    stroke-dashoffset: 0
+
+img
+  width: 100%
+</style>

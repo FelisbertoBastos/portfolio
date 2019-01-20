@@ -1,5 +1,5 @@
 <template>
-  <ul id="social-menu">
+  <ul>
     <li
       v-for="(item, key) in items"
       :key="key"
