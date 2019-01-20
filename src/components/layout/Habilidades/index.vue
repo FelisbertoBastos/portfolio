@@ -1,5 +1,6 @@
 <template>
   <flex-container
+    class="skills"
     v-width:full
     v-margin:all="'auto'"
     justifyContent=center
@@ -63,3 +64,22 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.skills
+
+  > div
+    animation: habilidadeItemInitialAnimation 0.5s both
+
+  @for $i from 1 through 6
+    > div:nth-child(#{$i})
+      animation-delay: #{$i * 0.1}s
+
+@keyframes habilidadeItemInitialAnimation
+  from
+    opacity: 0
+    transform: translateY(-20px)
+  to
+    opacity: 1
+    transform: translateY(0)
+</style>
