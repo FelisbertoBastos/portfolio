@@ -3,7 +3,6 @@
     class="contato-list"
     direction=column
   >
-    <div ref="indicator" class="indicator"></div>
     <contato-item
       v-on:mouseover.native.self="itemHover"
       class="contato-item"
@@ -13,6 +12,7 @@
       :link=contato.link
       :altText=contato.altText
     />
+    <div ref="indicator" class="indicator"></div>
   </flex-container>
 </template>
 
@@ -58,4 +58,19 @@ export default {
 
   &:hover .indicator
     opacity: 0.3
+
+  .contato-item
+    animation: ContatoItemInitialAnimation 0.5s both
+
+    @for $i from 1 through 3
+      &:nth-of-type(#{$i})
+        animation-delay: #{$i * 0.1}s
+
+@keyframes ContatoItemInitialAnimation
+  from
+    opacity: 0
+    transform: translateX(-20px)
+  to
+    opacity: 1
+    transform: translateX(0)
 </style>
