@@ -33,6 +33,7 @@ export default {
 <style lang="sass">
 .contato-item
   padding: 8px
+  cursor: pointer
 
   p
     margin: 8px
