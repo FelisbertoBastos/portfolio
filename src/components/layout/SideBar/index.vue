@@ -37,9 +37,24 @@ export default {
     return {
       socialMenuMaxWidth: '60px',
       iconItems: [
-        { src: require('@/assets/Whatsapp.svg'), alt: 'Whatsapp' },
-        { src: require('@/assets/Google.svg'), alt: 'Google' },
-        { src: require('@/assets/Github.svg'), alt: 'Github' }
+        {
+          src: require('@/assets/Whatsapp.svg'),
+          href: 'http://api.whatsapp.com/send?1=pt_BR&phone=5586995456429',
+          alt: 'Whatsapp',
+          newPage: true
+        },
+        {
+          src: require('@/assets/Google.svg'),
+          href: 'mailto:felisbertobastos22@gmail.com',
+          alt: 'Google',
+          newPage: false
+        },
+        {
+          src: require('@/assets/Github.svg'),
+          href: 'https://github.com/FelisbertoBastos',
+          alt: 'Github',
+          newPage: true
+        }
       ]
     }
   }
