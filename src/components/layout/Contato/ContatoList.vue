@@ -9,8 +9,10 @@
       v-for="(contato, key) in items"
       :key="key"
       :icon=contato.icon
+      :text=contato.text
       :link=contato.link
       :altText=contato.altText
+      :newPage=contato.newPage
     />
     <div ref="indicator" class="indicator"></div>
   </flex-container>

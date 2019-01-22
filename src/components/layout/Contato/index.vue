@@ -17,18 +17,24 @@ export default {
       contatos: [
         {
           icon: require('@/assets/Github.svg'),
+          text: 'https://github.com/FelisbertoBastos',
           link: 'https://github.com/FelisbertoBastos',
-          altText: 'Github'
+          altText: 'Github',
+          newPage: true
         },
         {
           icon: require('@/assets/Google.svg'),
-          link: 'felisbertobastos22@gmail.com',
-          altText: 'Google'
+          text: 'felisbertobastos22@gmail.com',
+          link: 'mailto:felisbertobastos22@gmail.com',
+          altText: 'Google',
+          newPage: false
         },
         {
           icon: require('@/assets/Whatsapp.svg'),
-          link: '+55 086 99545-6429',
-          altText: 'Whatsapp'
+          text: '+55 86 99545-6429',
+          link: 'http://api.whatsapp.com/send?1=pt_BR&phone=5586995456429',
+          altText: 'Whatsapp',
+          newPage: true
         }
       ]
     }

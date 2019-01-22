@@ -1,11 +1,16 @@
 <template>
-  <flex-container
-    alignItems=center
+  <a
     class="contato-item"
+    :target="newPage ? '_blank' : '_self'"
+    :href="link"
   >
-    <img :src="icon" :alt="altText">
-    <p>{{ link }}</p>
-  </flex-container>
+    <flex-container
+      alignItems=center
+    >
+      <img :src="icon" :alt="altText">
+      <p>{{ text }}</p>
+    </flex-container>
+  </a>
 </template>
 
 <script>
@@ -17,11 +22,17 @@ export default {
     icon: {
       type: String
     },
+    text: {
+      type: String
+    },
     link: {
       type: String
     },
     altText: {
       type: String
+    },
+    newPage: {
+      type: Boolean
     }
   },
   components: {
@@ -32,8 +43,12 @@ export default {
 
 <style lang="sass">
 .contato-item
-  padding: 8px
-  cursor: pointer
+
+  *
+    pointer-events: none
+
+  div
+    padding: 8px
 
   p
     margin: 8px
