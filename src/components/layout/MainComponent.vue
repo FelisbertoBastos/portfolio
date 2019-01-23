@@ -21,6 +21,9 @@
         v-else
       />
     </template>
+    <template slot="scrollbar">
+      <scroll-bar />
+    </template>
   </main-template>
 </template>
 
@@ -31,6 +34,7 @@ import Headline from './Headline'
 import CircuitTree from './CircuitTree'
 import Habilidades from './Habilidades'
 import Contato from './Contato'
+import ScrollBar from './ScrollBar'
 
 export default {
   name: 'MainComponent',
@@ -40,7 +44,8 @@ export default {
     'headline': Headline,
     'circuit-tree': CircuitTree,
     'habilidades': Habilidades,
-    'contato': Contato
+    'contato': Contato,
+    'scroll-bar': ScrollBar
   },
   data () {
     return {

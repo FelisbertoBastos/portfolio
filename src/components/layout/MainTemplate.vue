@@ -30,6 +30,13 @@
       >
         <slot name="content"></slot>
       </flex-container>
+      <flex-container
+        v-width="scrollbarWidth"
+        justifyContent=center
+        alignItems=center
+      >
+        <slot name="scrollbar"></slot>
+      </flex-container>
     </flex-container>
   </flex-container>
 </template>
@@ -46,7 +53,8 @@ export default {
     return {
       contentAreaMarginLeft: '60px',
       titleWidth: '40%',
-      contentWidth: '60%'
+      contentWidth: '60%',
+      scrollbarWidth: '60px'
     }
   }
 }
