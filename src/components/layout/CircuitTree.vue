@@ -1,5 +1,5 @@
 <template>
-  <svg width="838.17" height="967.119" viewBox="0 0 838.17 967.119">
+  <svg v-width:full height="967.119" viewBox="0 0 838.17 967.119">
     <defs>
       <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
         <stop offset="0" stop-color="#35313f" stop-opacity="0.2"/>

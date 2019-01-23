@@ -11,14 +11,14 @@
       <headline />
     </template>
     <template slot="content">
-      <!-- <circuit-tree
-        v-width:full
-      /> -->
       <habilidades
         v-if="checkNavOption('Habilidades')"
       />
       <contato
         v-else-if="checkNavOption('Contato')"
+      />
+      <circuit-tree
+        v-else
       />
     </template>
   </main-template>
@@ -28,7 +28,7 @@
 import MainTemplate from './MainTemplate'
 import NavBar from './NavBar'
 import Headline from './Headline'
-// import CircuitTree from './CircuitTree'
+import CircuitTree from './CircuitTree'
 import Habilidades from './Habilidades'
 import Contato from './Contato'
 
@@ -38,7 +38,7 @@ export default {
     'main-template': MainTemplate,
     'navbar': NavBar,
     'headline': Headline,
-    // 'circuit-tree': CircuitTree,
+    'circuit-tree': CircuitTree,
     'habilidades': Habilidades,
     'contato': Contato
   },
