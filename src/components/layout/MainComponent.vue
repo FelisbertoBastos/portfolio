@@ -22,7 +22,11 @@
       />
     </template>
     <template slot="scrollbar">
-      <scroll-bar />
+      <scroll-bar
+        :steps=3
+        :pathHeight=200
+        :controlHeight=60
+      />
     </template>
   </main-template>
 </template>

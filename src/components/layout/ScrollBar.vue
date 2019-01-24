@@ -1,92 +1,133 @@
 <template>
-  <div id="scroll-bar" class="scroll-bar">
-    <div class="scroll-path"></div>
-    <div id="scroll-control" class="scroll-control"></div>
+  <div
+    ref="scrollBar"
+    class="scroll-bar"
+  >
+    <div
+      class="scroll-path"
+      :style="scrollPathStyleObject"
+    ></div>
+    <div
+      ref="scrollControl"
+      class="scroll-control"
+      :style="scrollControlStyleObject"
+    ></div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'ScrollBar',
+  props: {
+    steps: {
+      type: Number,
+      required: true
+    },
+    pathHeight: {
+      type: Number,
+      required: true
+    },
+    controlHeight: {
+      type: Number,
+      required: true
+    }
+  },
+  data () {
+    return {
+      min: 0,
+      max: this.pathHeight - this.controlHeight,
+      stepsArray: [],
+      active: false,
+      currentY: 0,
+      initialY: 0,
+      yOffset: 0,
+      scrollControl: null,
+      scrollBar: null
+    }
+  },
   mounted () {
-    var scrollControl = document.getElementById('scroll-control')
-    var scrollBar = document.getElementById('scroll-bar')
+    this.setScroll(this.steps, this.min, this.max)
+  },
+  methods: {
+    setScroll (steps, min, max) {
+      this.scrollControl = this.$refs.scrollControl
+      this.scrollBar = this.$refs.scrollBar
 
-    const steps = 3
-    const min = 0
-    const max = 200 - 60
-    const stepsArray = []
-    for (var i = 0; i < steps - 1; i++) {
-      stepsArray.push(Math.round(i * max / (steps - 1)))
-    }
-    stepsArray.push(max)
+      for (var i = 0; i < steps - 1; i++) {
+        this.stepsArray.push(Math.round(i * max / (steps - 1)))
+      }
+      this.stepsArray.push(max)
 
-    var active = false
-    var currentY = 0
-    var initialY = 0
-    var yOffset = 0
+      this.scrollBar.addEventListener('touchstart', this.dragStart, false)
+      this.scrollBar.addEventListener('touchend', this.dragEnd, false)
+      this.scrollBar.addEventListener('touchmove', this.drag, false)
 
-    scrollBar.addEventListener('touchstart', dragStart, false)
-    scrollBar.addEventListener('touchend', dragEnd, false)
-    scrollBar.addEventListener('touchmove', drag, false)
-
-    scrollBar.addEventListener('mousedown', dragStart, false)
-    scrollBar.addEventListener('mouseup', dragEnd, false)
-    scrollBar.addEventListener('mousemove', drag, false)
-
-    function dragStart (e) {
+      this.scrollBar.addEventListener('mousedown', this.dragStart, false)
+      this.scrollBar.addEventListener('mouseup', this.dragEnd, false)
+      this.scrollBar.addEventListener('mousemove', this.drag, false)
+    },
+    dragStart (e) {
       if (e.type === 'touchstart') {
-        initialY = e.touches[0].clientY - yOffset
+        this.initialY = e.touches[0].clientY - this.yOffset
       } else {
-        initialY = e.clientY - yOffset
+        this.initialY = e.clientY - this.yOffset
       }
 
-      if (e.target === scrollControl) {
-        scrollControl.classList.remove('scroll-transition')
-        active = true
+      if (e.target === this.scrollControl) {
+        this.scrollControl.classList.remove('scroll-transition')
+        this.active = true
       }
-    }
+    },
+    dragEnd (e) {
+      this.initialY = this.currentY
 
-    function dragEnd (e) {
-      initialY = currentY
-
-      active = false
+      this.active = false
 
       var closest = Number.MAX_SAFE_INTEGER
       var index = 0
-      stepsArray.forEach((num, i) => {
-        var dist = Math.abs(currentY - num)
+      this.stepsArray.forEach((num, i) => {
+        var dist = Math.abs(this.currentY - num)
         if (dist < closest) {
           index = i
           closest = dist
         }
       })
-      yOffset = stepsArray[index]
+      this.yOffset = this.stepsArray[index]
 
-      scrollControl.classList.add('scroll-transition')
-      setTranslate(yOffset, scrollControl)
-    }
-
-    function drag (e) {
-      if (active) {
+      this.scrollControl.classList.add('scroll-transition')
+      this.setTranslate(this.yOffset, this.scrollControl)
+    },
+    drag (e) {
+      if (this.active) {
         e.preventDefault()
 
         if (e.type === 'touchmove') {
-          currentY = e.touches[0].clientY - initialY
+          this.currentY = e.touches[0].clientY - this.initialY
         } else {
-          currentY = e.clientY - initialY
+          this.currentY = e.clientY - this.initialY
         }
 
-        yOffset = currentY
+        this.yOffset = this.currentY
 
-        if (currentY >= min && currentY <= max) {
-          setTranslate(currentY, scrollControl)
+        if (this.currentY >= this.min && this.currentY <= this.max) {
+          this.setTranslate(this.currentY, this.scrollControl)
         }
       }
-    }
-
-    function setTranslate (yPos, el) {
+    },
+    setTranslate (yPos, el) {
       el.style.transform = 'translate3d(0, ' + yPos + 'px, 0)'
+    }
+  },
+  computed: {
+    scrollPathStyleObject () {
+      return {
+        height: this.pathHeight + 'px'
+      }
+    },
+    scrollControlStyleObject () {
+      return {
+        height: this.controlHeight + 'px'
+      }
     }
   }
 }
@@ -99,7 +140,6 @@ export default {
 
   .scroll-path
     width: 2px
-    height: 200px
     margin: auto
     background: #707070
 
@@ -109,7 +149,6 @@ export default {
     left: 50%
     margin-left: -10px
     width: 20px
-    height: 60px
     background: #35313F
     border: 2px solid #707070
     border-radius: 50% / 10px
