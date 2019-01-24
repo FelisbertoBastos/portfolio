@@ -24,10 +24,28 @@ export default {
       default: () => []
     }
   },
+  data () {
+    return {
+      positions: []
+    }
+  },
   methods: {
-    indicatorPositioning (left, width) {
-      this.$refs.indicator.style.left = left
-      this.$refs.indicator.style.width = width
+    setNavBar () {
+      this.$refs.navbar.childNodes
+        .forEach(element => {
+          if (element.tagName === 'A') {
+            this.positions.push({
+              offsetLeft: element.offsetLeft,
+              offsetWidth: element.offsetWidth
+            })
+          }
+        })
+      this.indicatorPositioning(this.positions[0])
+    },
+    indicatorPositioning (position) {
+      const indicator = this.$refs.indicator
+      indicator.style.left = position.offsetLeft + 'px'
+      indicator.style.width = position.offsetWidth + 'px'
     },
     itemSelect (event) {
       if (event.target.tagName === 'A') {
@@ -35,19 +53,23 @@ export default {
         if (item) {
           item.active = false
           this.items.find(item => item.name === event.target.innerText).active = true
-          this.indicatorPositioning(
-            event.target.offsetLeft + 'px',
-            event.target.offsetWidth + 'px'
-          )
         }
       }
     }
   },
+  watch: {
+    items: {
+      handler (newValue) {
+        const index = newValue.findIndex(item => item.active)
+        if (index >= 0) {
+          this.indicatorPositioning(this.positions[index])
+        }
+      },
+      deep: true
+    }
+  },
   mounted () {
-    this.indicatorPositioning(
-      this.$refs.navbar.firstElementChild.offsetLeft + 'px',
-      this.$refs.navbar.firstElementChild.offsetWidth + 'px'
-    )
+    this.setNavBar()
   }
 }
 </script>

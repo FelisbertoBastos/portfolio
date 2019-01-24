@@ -19,10 +19,6 @@
 export default {
   name: 'ScrollBar',
   props: {
-    steps: {
-      type: Number,
-      required: true
-    },
     pathHeight: {
       type: Number,
       required: true
@@ -30,13 +26,16 @@ export default {
     controlHeight: {
       type: Number,
       required: true
+    },
+    items: {
+      type: Array,
+      required: true
     }
   },
   data () {
     return {
-      min: 0,
       max: this.pathHeight - this.controlHeight,
-      stepsArray: [],
+      positions: [],
       active: false,
       currentY: 0,
       initialY: 0,
@@ -46,17 +45,17 @@ export default {
     }
   },
   mounted () {
-    this.setScroll(this.steps, this.min, this.max)
+    this.setScroll(this.items.length, this.max)
   },
   methods: {
-    setScroll (steps, min, max) {
+    setScroll (steps, max) {
       this.scrollControl = this.$refs.scrollControl
       this.scrollBar = this.$refs.scrollBar
 
       for (var i = 0; i < steps - 1; i++) {
-        this.stepsArray.push(Math.round(i * max / (steps - 1)))
+        this.positions.push(Math.round(i * max / (steps - 1)))
       }
-      this.stepsArray.push(max)
+      this.positions.push(max)
 
       this.scrollBar.addEventListener('touchstart', this.dragStart, false)
       this.scrollBar.addEventListener('touchend', this.dragEnd, false)
@@ -85,17 +84,23 @@ export default {
 
       var closest = Number.MAX_SAFE_INTEGER
       var index = 0
-      this.stepsArray.forEach((num, i) => {
+      this.positions.forEach((num, i) => {
         var dist = Math.abs(this.currentY - num)
         if (dist < closest) {
           index = i
           closest = dist
         }
       })
-      this.yOffset = this.stepsArray[index]
+      this.yOffset = this.positions[index]
 
-      this.scrollControl.classList.add('scroll-transition')
-      this.setTranslate(this.yOffset, this.scrollControl)
+      const item = this.items.find((item, key) => item.active && key !== index)
+      if (item) {
+        item.active = false
+        this.items[index].active = true
+        return
+      }
+
+      this.setTranslate(this.yOffset, this.scrollControl, true)
     },
     drag (e) {
       if (this.active) {
@@ -109,12 +114,15 @@ export default {
 
         this.yOffset = this.currentY
 
-        if (this.currentY >= this.min && this.currentY <= this.max) {
+        if (this.currentY >= 0 && this.currentY <= this.max) {
           this.setTranslate(this.currentY, this.scrollControl)
         }
       }
     },
-    setTranslate (yPos, el) {
+    setTranslate (yPos, el, withTransition) {
+      if (withTransition) {
+        el.classList.add('scroll-transition')
+      }
       el.style.transform = 'translate3d(0, ' + yPos + 'px, 0)'
     }
   },
@@ -128,6 +136,18 @@ export default {
       return {
         height: this.controlHeight + 'px'
       }
+    }
+  },
+  watch: {
+    items: {
+      handler (newValue) {
+        const index = newValue.findIndex(item => item.active)
+        if (index >= 0) {
+          this.yOffset = this.positions[index]
+          this.setTranslate(this.positions[index], this.scrollControl, true)
+        }
+      },
+      deep: true
     }
   }
 }

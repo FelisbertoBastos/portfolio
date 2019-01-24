@@ -23,9 +23,9 @@
     </template>
     <template slot="scrollbar">
       <scroll-bar
-        :steps=3
         :pathHeight=200
         :controlHeight=60
+        :items=navItems
       />
     </template>
   </main-template>
