@@ -60,3 +60,21 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+div#sidebar
+  background: $sidebar-background-color
+  height: 100vh
+  width: $sidebar-width
+  position: fixed
+  box-shadow: $sidebar-shadow
+  animation-name: sidebarInitialAnimation
+  animation-duration: $sidebar-initial-animation-duration
+  animation-fill-mode: both
+
+@keyframes sidebarInitialAnimation
+  from
+    left: -$sidebar-width
+  to
+    left: 0
+</style>

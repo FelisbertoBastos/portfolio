@@ -76,3 +76,87 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+div.flex-container
+  display: flex
+
+  &.direction
+    
+    &-column
+      flex-direction: column
+
+    &-column-reverse
+      flex-direction: column-reverse
+    
+    &-row
+      flex-direction: row
+    
+    &-row-reverse
+      flex-direction: row-reverse
+  
+  &.align-items
+
+    &-center
+      align-items: center
+    
+    &-flex-start
+      align-items: flex-start
+
+    &-flex-end
+      align-items: flex-end
+
+    &-stretch
+      align-items: stretch
+    
+    &-baseline
+      align-items: baseline
+
+  &.justify-content
+    
+    &-center
+      justify-content: center
+
+    &-flex-start
+      justify-content: flex-start
+
+    &-flex-end
+      justify-content: flex-end
+    
+    &-space-around
+      justify-content: space-around
+    
+    &-space-between
+      justify-content: space-between
+
+  &.wrap
+
+    &-wrap
+      flex-wrap: wrap
+
+    &-nowrap
+      flex-wrap: nowrap
+    
+    &-wrap-reverse
+      flex-wrap: wrap-reverse
+
+  &.align-content
+
+    &-space-between
+      align-content: space-between
+    
+    &-space-around
+      align-content: space-around
+
+    &-stretch
+      align-content: stretch
+
+    &-center
+      align-content: center
+
+    &-flex-start
+      align-content: flex-start
+
+    &-flex-end
+      align-content: flex-end
+</style>

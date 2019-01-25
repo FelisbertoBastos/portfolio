@@ -29,3 +29,42 @@ export default {
   name: 'Title'
 }
 </script>
+
+<style lang="sass">
+div#headline
+  position: relative
+  max-width: 300px
+
+  svg
+    position: absolute
+    max-width: 300px
+
+    #Front-end_Developer
+      opacity: 0
+      animation: headlineInitialAnimation 1s ease forwards, upToDown 1s ease forwards
+
+    #Felisberto_Bastos
+      opacity: 0
+      animation: headlineInitialAnimation 1s linear forwards, downToUp 1s ease forwards
+
+  img
+    max-width: 300px
+
+@keyframes headlineInitialAnimation
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes upToDown
+  from
+    transform: translate(226px, 349px)
+  to
+    transform: translate(226px, 399px)
+
+@keyframes downToUp
+  from
+    transform: translate(226px, 721px)
+  to
+    transform: translate(226px, 671px)
+</style>

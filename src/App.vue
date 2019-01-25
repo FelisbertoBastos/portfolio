@@ -17,3 +17,12 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+#app
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  font-family: $font-family
+  color: $font-color
+</style>

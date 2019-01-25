@@ -1,7 +1,7 @@
 <template>
   <nav
-    id="navbar"
     ref="navbar"
+    class="navbar"
     v-on:click="itemSelect"
   >
     <a
@@ -73,3 +73,27 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+nav.navbar
+  position: relative
+
+  a
+    display: inline-block
+    font-size: $navbar-font-size
+    font-weight: bold
+    margin-left: 8px
+    margin-right: 8px
+    height: $navbar-font-size
+
+    &:hover
+      border-bottom: 2px solid $navbar-inactive-indicator
+  
+  .indicator
+    position: absolute
+    bottom: 0
+    left: 0
+    background: $font-color
+    height: 2px
+    transition: all $navbar-indicator-transition-duration
+</style>

@@ -50,3 +50,22 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+div.flex-container
+  .flex-item
+    
+    &.align-self
+
+      &-auto
+        align-self: auto
+
+      &-center
+        align-self: center
+      
+      &-flex-start
+        align-self: flex-start
+      
+      &-flex-end
+        align-self: flex-end
+</style>
