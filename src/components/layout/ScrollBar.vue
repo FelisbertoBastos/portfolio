@@ -28,7 +28,7 @@ export default {
       required: true
     },
     items: {
-      type: Array,
+      type: Object,
       required: true
     }
   },
@@ -45,7 +45,7 @@ export default {
     }
   },
   mounted () {
-    this.setScroll(this.items.length, this.max)
+    this.setScroll(this.items.options.length, this.max)
   },
   methods: {
     setScroll (steps, max) {
@@ -93,10 +93,8 @@ export default {
       })
       this.yOffset = this.positions[index]
 
-      const item = this.items.find((item, key) => item.active && key !== index)
-      if (item) {
-        item.active = false
-        this.items[index].active = true
+      if (this.items.active !== index) {
+        this.items.active = index
         return
       }
 
@@ -139,15 +137,11 @@ export default {
     }
   },
   watch: {
-    items: {
+    'items.active': {
       handler (newValue) {
-        const index = newValue.findIndex(item => item.active)
-        if (index >= 0) {
-          this.yOffset = this.positions[index]
-          this.setTranslate(this.positions[index], this.scrollControl, true)
-        }
-      },
-      deep: true
+        this.yOffset = this.positions[newValue]
+        this.setTranslate(this.positions[newValue], this.scrollControl, true)
+      }
     }
   }
 }

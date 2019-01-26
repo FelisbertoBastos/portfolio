@@ -5,11 +5,11 @@
     v-on:click="itemSelect"
   >
     <a
-      v-for="(item, key) in items"
+      v-for="(item, key) in items.options"
       :key="key"
       href="#"
     >
-      {{ item.name }}
+      {{ item }}
     </a>
     <div ref="indicator" class="indicator"></div>
   </nav>
@@ -20,8 +20,8 @@ export default {
   name: 'NavBar',
   props: {
     items: {
-      type: Array,
-      default: () => []
+      type: Object,
+      required: true
     }
   },
   data () {
@@ -40,7 +40,7 @@ export default {
             })
           }
         })
-      this.indicatorPositioning(this.positions[0])
+      this.indicatorPositioning(this.positions[this.items.active])
     },
     indicatorPositioning (position) {
       const indicator = this.$refs.indicator
@@ -49,23 +49,17 @@ export default {
     },
     itemSelect (event) {
       if (event.target.tagName === 'A') {
-        const item = this.items.find(item => item.active && item.name !== event.target.innerText)
-        if (item) {
-          item.active = false
-          this.items.find(item => item.name === event.target.innerText).active = true
-        }
+        this.items.active =
+          this.items.options
+            .findIndex(option => option === event.target.innerText.trim())
       }
     }
   },
   watch: {
-    items: {
+    'items.active': {
       handler (newValue) {
-        const index = newValue.findIndex(item => item.active)
-        if (index >= 0) {
-          this.indicatorPositioning(this.positions[index])
-        }
-      },
-      deep: true
+        this.indicatorPositioning(this.positions[newValue])
+      }
     }
   },
   mounted () {
@@ -88,7 +82,7 @@ nav.navbar
 
     &:hover
       border-bottom: 2px solid $navbar-inactive-indicator
-  
+
   .indicator
     position: absolute
     bottom: 0

@@ -53,18 +53,15 @@ export default {
   },
   data () {
     return {
-      navItems: [
-        { name: 'Início', active: true },
-        { name: 'Habilidades', active: false },
-        { name: 'Contato', active: false }
-      ]
+      navItems: {
+        active: 0,
+        options: ['Início', 'Habilidades', 'Contato']
+      }
     }
   },
   methods: {
     checkNavOption: function (testName) {
-      return this.navItems.some(item => {
-        return item.name === testName && item.active === true
-      })
+      return this.navItems.options[this.navItems.active] === testName
     }
   }
 }
