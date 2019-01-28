@@ -59,7 +59,26 @@ export default {
       }
     }
   },
+  created () {
+    window.addEventListener('keyup', event => this.setKeyboardScroll(event, this.navItems))
+  },
   methods: {
+    setKeyboardScroll (event, navItems) {
+      switch (event.which) {
+        case 39:
+        case 40:
+          if (navItems.active < navItems.options.length - 1) {
+            navItems.active++
+          }
+          break
+        case 37:
+        case 38:
+          if (navItems.active > 0) {
+            navItems.active--
+          }
+          break
+      }
+    },
     checkNavOption: function (testName) {
       return this.navItems.options[this.navItems.active] === testName
     }
