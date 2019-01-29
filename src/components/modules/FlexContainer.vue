@@ -82,24 +82,24 @@ div.flex-container
   display: flex
 
   &.direction
-    
+
     &-column
       flex-direction: column
 
     &-column-reverse
       flex-direction: column-reverse
-    
+
     &-row
       flex-direction: row
-    
+
     &-row-reverse
       flex-direction: row-reverse
-  
+
   &.align-items
 
     &-center
       align-items: center
-    
+
     &-flex-start
       align-items: flex-start
 
@@ -108,12 +108,12 @@ div.flex-container
 
     &-stretch
       align-items: stretch
-    
+
     &-baseline
       align-items: baseline
 
   &.justify-content
-    
+
     &-center
       justify-content: center
 
@@ -122,10 +122,10 @@ div.flex-container
 
     &-flex-end
       justify-content: flex-end
-    
+
     &-space-around
       justify-content: space-around
-    
+
     &-space-between
       justify-content: space-between
 
@@ -136,7 +136,7 @@ div.flex-container
 
     &-nowrap
       flex-wrap: nowrap
-    
+
     &-wrap-reverse
       flex-wrap: wrap-reverse
 
@@ -144,7 +144,7 @@ div.flex-container
 
     &-space-between
       align-content: space-between
-    
+
     &-space-around
       align-content: space-around
 
